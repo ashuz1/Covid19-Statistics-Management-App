@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello! genral user</h1>
+    <div>
+        {% load static %}
+
+        <div>
+            <div>
+                <button type="submit" style="float: center;" onclick="window.location.href='/add_details/'">
+                    <b>Add covid Details</b>
+                </button>
+            </div>
+            <div>
+                <table border='1'>
+                    <thead class="thead">
+                        <tr>
+                            <th> user_state</th>
+                            <th> total_cases</th>
+                            <th>recoverd_cases</th>
+                            <th>active_cases</th>
+                            <th> total_deaths</th>
+                            <th>vaccinated</th>
+                            <th>updated_on</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    {% for i in categories %}
+                    <tr>
+                        <td>{{i.0}}</td>
+                        <td>{{i.1}}</td>
+                        <td>{{i.2}}</td>
+                        <td>{{i.3}}</td>
+                        <td>{{i.4}}</td>
+                        <td>{{i.5}}</td>
+                        <td>{{i.6}}</td>
+                        <td><a href='edit/{{i.0}}'>Edit</a> | <a href='delete/{{i.0}}'>Delete</a> </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
