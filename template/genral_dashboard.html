@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <h1>hello! genral user</h1>
@@ -33,13 +36,13 @@
                     </thead>
                     {% for i in categories %}
                     <tr>
-                        <td>{{i.0}}</td>
                         <td>{{i.1}}</td>
                         <td>{{i.2}}</td>
                         <td>{{i.3}}</td>
                         <td>{{i.4}}</td>
                         <td>{{i.5}}</td>
                         <td>{{i.6}}</td>
+                        <td>{{i.7}}</td>
                         <td><a href='edit/{{i.0}}'>Edit</a> | <a href='delete/{{i.0}}'>Delete</a> </td>
                     </tr>
                     {% endfor %}

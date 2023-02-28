@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 import mysql.connector as sql
+from genraldashboard.views import categorylisting
+from aprove_page.views import aproveaction
 
 un=''
 upwd =''
@@ -26,9 +28,9 @@ def loginaction(request):
         if t==():
             return render(request,'error.html')
         elif t[0] == ('admin',):
-            return render(request,'aprove.html')
+            return redirect(aproveaction)
         elif t[0] == ('user',):
-            return render(request,'genral_dashboard.html')
+            return redirect(categorylisting)
         else:
             return render(request,'error.html')
     return render(request,'login_page.html')

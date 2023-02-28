@@ -1,46 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
-        #heading{
-            display: flex;
-            height: 20px;
-            
-
-        }
-        #dash{
-            width: 90%;
-
-            text-align: center;
-        }
-        #butt{
-            width: 10%;
-        
-        }
-
+      .heading {
+        text-align: center;
+      }
+      .btn {
+        float: right;
+        color: red;
+        position: absolute;
+        top: 4px;
+        right: 9px;
+        font-size: x-large;
+      }
+      .table {
+        text-align: center;
+      }
+      .actual {
+        margin: auto 13rem;
+      }
     </style>
-</head>
-<body>
-    <div id="heading">
-        <div id="dash">
-            <h1 style="padding-left: 5%;">DASHBOARD</h1>
-        </div>
-        <div id="butt">
-            <button type="submit" style="float: right;" onclick="window.location.href='/login_page/'">
-                <b>Login</b>
-            </button>
-        </div>
-        
-        
-    </div>
+  </head>
+  <body>
     <div>
+      <h1 class="heading">DASHBOARD</h1>
+      <button
+        class="btn"
+        type="submit"
+        onclick="window.location.href='/login_page/'"
+      >
+        Login
+      </button>
 
+      <div class="table">
+        {% load static %}
+        <table border="1" class="actual">
+          <thead class="thead">
+            <tr>
+              <th>user_state</th>
+              <th>total_cases</th>
+              <th>recoverd_cases</th>
+              <th>active_cases</th>
+              <th>total_deaths</th>
+              <th>vaccinated</th>
+              <th>updated_on</th>
+            </tr>
+          </thead>
+          {% for i in categories %}
+          <tr>
+            <td>{{i.1}}</td>
+            <td>{{i.2}}</td>
+            <td>{{i.3}}</td>
+            <td>{{i.4}}</td>
+            <td>{{i.5}}</td>
+            <td>{{i.6}}</td>
+            <td>{{i.7}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
     </div>
-    <div></div>
-</body>
+  </body>
 </html>

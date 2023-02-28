@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login_page',
     'public_Dashboard',
+    'genraldashboard',
+    'aprove_page',
+    'adddetails',
 ]
 
 MIDDLEWARE = [

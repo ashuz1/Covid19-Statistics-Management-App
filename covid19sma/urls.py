@@ -17,10 +17,15 @@ from django.contrib import admin
 from django.urls import path , include
 from login_page.views import loginaction
 from adddetails.views import addaction
+from genraldashboard.views import categorylisting 
+from aprove_page.views import aproveaction , setaprove
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login_page/',loginaction),
     path('',include('public_Dashboard.urls')),
     path('add_details/',addaction),
+    path('genral_dashboard/',categorylisting),
+    path('aprove_page/',aproveaction),
+    path('aprove_page/<int:id>',setaprove,name="setaprove"),
 ]

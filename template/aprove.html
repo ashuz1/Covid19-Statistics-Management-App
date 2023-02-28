@@ -8,5 +8,32 @@
 </head>
 <body>
     <h1>Hi Admin</h1>
+    <table border='1'>
+        <thead class="thead">
+            <tr>
+                <th> user_state</th>
+                <th> total_cases</th>
+                <th>recoverd_cases</th>
+                <th>active_cases</th>
+                <th> total_deaths</th>
+                <th>vaccinated</th>
+                <th>updated_on</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        {% for i in categories %}
+        <tr>
+            <td>{{i.1}}</td>
+            <td>{{i.2}}</td>
+            <td>{{i.3}}</td>
+            <td>{{i.4}}</td>
+            <td>{{i.5}}</td>
+            <td>{{i.6}}</td>
+            <td>{{i.7}}</td>
+            <td><a href='{{i.0}}' id="approve">aprove</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
+
 </html>
